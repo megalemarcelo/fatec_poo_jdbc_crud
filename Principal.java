@@ -19,11 +19,12 @@ public class Principal {
                             break;
                         }
                         case 2:{
-                            String nome = JOptionPane.showInputDialog("Digite o nome");
-                            String fone = JOptionPane.showInputDialog("Digite o fone");
-                            String email = JOptionPane.showInputDialog("Digite o e-mail");
-                            int codigo = parseInt(JOptionPane.showInputDialog("Digite o código"));
-                            Pessoa p = new Pessoa(codigo, nome, fone, email);
+                            int codigo = parseInt(JOptionPane.showInputDialog(Pessoa.listar() + "Digite o código:"));
+                            Pessoa pessoa = Pessoa.buscar(codigo);
+                            String nome = JOptionPane.showInputDialog( Pessoa.listar() + "Digite o nome:", pessoa.getNome());
+                            String fone = JOptionPane.showInputDialog(Pessoa.listar() + "Digite o fone:",pessoa.getFone());
+                            String email = JOptionPane.showInputDialog(Pessoa.listar() + "Digite o e-mail:",pessoa.getEmail());
+                            Pessoa p = new Pessoa(codigo,nome,fone,email);
                             p.atualizar();
                             JOptionPane.showMessageDialog(null, "Pessoa atualizada");
                             break;
@@ -35,7 +36,7 @@ public class Principal {
                             break;
                         }
                         case 4:
-                            Pessoa.listar();
+                            JOptionPane.showMessageDialog(null, Pessoa.listar());
                             break;
                         case 0:
                             break;
