@@ -1,0 +1,6 @@
+1. Ajustar a operação de atualizar para que ela
+
+1.1 Mostre a lista de pessoas existentes, incluindo o seu código
+
+1.2 A cada variável pedida (nome, fone e e-mail) mostrar para o usuário qual é o 
+valor existente atualmente
